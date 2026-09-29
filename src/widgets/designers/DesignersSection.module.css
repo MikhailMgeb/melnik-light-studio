@@ -1,0 +1,35 @@
+.promises {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.promises div {
+  border-left: 1px solid var(--line);
+  padding-left: 24px;
+}
+
+.promises p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.also {
+  margin-top: clamp(40px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: clamp(32px, 6vw, 96px);
+  color: var(--muted);
+}
+
+.also p {
+  margin: 0;
+  max-width: 52ch;
+}
+
+@media (max-width: 860px) {
+  .promises,
+  .also {
+    grid-template-columns: 1fr;
+  }
+}

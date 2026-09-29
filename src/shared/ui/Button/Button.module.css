@@ -1,0 +1,31 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 2px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn:hover {
+  opacity: 0.86;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.ghost:hover {
+  border-color: var(--ink);
+  opacity: 1;
+}

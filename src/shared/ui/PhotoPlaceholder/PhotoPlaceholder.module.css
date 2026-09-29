@@ -1,0 +1,35 @@
+.ph {
+  position: relative;
+  overflow: hidden;
+  background: var(--wall);
+  border-radius: 2px;
+}
+
+.ph::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 30% 70% at var(--x) var(--y), rgba(255, 214, 170, 0.75), rgba(255, 214, 170, 0) 70%),
+    radial-gradient(ellipse 22% 55% at var(--x2) 0%, rgba(255, 214, 170, 0.5), rgba(255, 214, 170, 0) 70%),
+    linear-gradient(180deg, rgba(var(--shade), 0) 55%, rgba(var(--shade), 0.14) 100%);
+}
+
+.ph::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18%;
+  background: rgba(var(--shade), 0.06);
+}
+
+.ph span {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 1;
+  font-size: 13px;
+  color: var(--muted);
+}

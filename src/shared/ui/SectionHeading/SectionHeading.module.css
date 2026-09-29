@@ -1,0 +1,19 @@
+.head {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: clamp(32px, 6vw, 96px);
+  margin-bottom: clamp(40px, 5vw, 72px);
+}
+
+.head p {
+  color: var(--muted);
+  margin: 0;
+  max-width: 46ch;
+  align-self: end;
+}
+
+@media (max-width: 760px) {
+  .head {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,18 @@
+.demo {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+
+.text p {
+  color: var(--muted);
+  max-width: 40ch;
+  margin: 24px 0 0;
+}
+
+@media (max-width: 900px) {
+  .demo {
+    grid-template-columns: 1fr;
+  }
+}

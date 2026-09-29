@@ -1,0 +1,27 @@
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  counter-reset: s;
+}
+
+.total {
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+@media (max-width: 1080px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}

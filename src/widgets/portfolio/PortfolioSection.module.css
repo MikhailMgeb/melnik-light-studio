@@ -1,0 +1,5 @@
+.works {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(16px, 2vw, 28px);
+}

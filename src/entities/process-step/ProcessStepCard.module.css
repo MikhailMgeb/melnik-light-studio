@@ -1,0 +1,32 @@
+.step {
+  counter-increment: s;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+}
+
+.step::before {
+  content: counter(s);
+  display: block;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.step h3 {
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+
+.step p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.duration {
+  display: block;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}

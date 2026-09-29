@@ -1,0 +1,27 @@
+.row {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: clamp(16px, 6vw, 96px);
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.row h3 {
+  margin: 0;
+}
+
+.row p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+@media (max-width: 760px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
