@@ -1,14 +1,13 @@
 import { Header } from '@/widgets/header'
 import { Hero } from '@/widgets/hero'
-import { LightDemoSection } from '@/widgets/light-demo'
-import { ServicesSection } from '@/widgets/services'
-import { DesignersSection } from '@/widgets/designers'
-import { ProcessSection } from '@/widgets/process'
-import { PricingSection } from '@/widgets/pricing'
+import { ReasonsSection } from '@/widgets/reasons'
 import { PortfolioSection } from '@/widgets/portfolio'
-import { FounderSection } from '@/widgets/founder'
-import { StatementSection } from '@/widgets/statement'
-import { ContactSection } from '@/widgets/contact'
+import { ProcessSection } from '@/widgets/process'
+import { ProjectExampleSection, EstimateAuditSection } from '@/widgets/offers'
+import { ReviewsSection } from '@/widgets/reviews'
+import { DesignersSection } from '@/widgets/designers'
+import { FaqSection } from '@/widgets/faq'
+import { RequestSection } from '@/widgets/request'
 import { Footer } from '@/widgets/footer'
 
 export function HomePage() {
@@ -17,15 +16,15 @@ export function HomePage() {
       <Header />
       <main>
         <Hero />
-        <LightDemoSection />
-        <ServicesSection />
-        <DesignersSection />
-        <ProcessSection />
-        <PricingSection />
+        <ReasonsSection />
         <PortfolioSection />
-        <FounderSection />
-        <StatementSection />
-        <ContactSection />
+        <ProcessSection />
+        <ProjectExampleSection />
+        <EstimateAuditSection />
+        <ReviewsSection />
+        <DesignersSection />
+        <FaqSection />
+        <RequestSection />
       </main>
       <Footer />
     </>

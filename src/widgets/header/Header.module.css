@@ -1,85 +1,61 @@
-.header {
+.top {
   position: sticky;
-  top: env(safe-area-inset-top, 0px);
-  z-index: 10;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s;
-}
-
-.header.scrolled {
-  border-bottom-color: var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-top: env(safe-area-inset-top, 0px);
+  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
 }
 
 .bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
   height: 72px;
 }
 
-.logo {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  text-decoration: none;
-  color: var(--ink);
-  font-family: 'Montserrat', var(--font);
-  font-weight: 400;
-  line-height: 1;
+.mark {
+  font-size: 18px;
+  margin-right: auto;
 }
 
-.word {
-  font-size: 20px;
-  letter-spacing: 0.32em;
-  margin-right: -0.32em;
-  white-space: nowrap;
-}
-
-.deg {
-  display: inline-block;
-  width: 0.26em;
-  height: 0.26em;
-  border: 0.065em solid var(--bronze);
-  border-radius: 50%;
-  vertical-align: top;
-  margin-left: -0.2em;
-  margin-right: 0.32em;
-  position: relative;
-  top: 0.12em;
-}
-
-.logo small {
-  font-size: 8.5px;
-  letter-spacing: 0.42em;
-  margin-right: -0.42em;
-  text-transform: uppercase;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-.nav {
+.menu {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  gap: 26px;
+  font-size: 15px;
 }
 
-.link {
+.menu a,
+.mail {
   text-decoration: none;
-  font-size: 15px;
   color: var(--muted);
 }
 
-.link:hover {
+.menu a:hover {
   color: var(--ink);
 }
 
-@media (max-width: 860px) {
-  .link {
+.mail {
+  font-size: 15px;
+}
+
+.bar .cta {
+  padding: 12px 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+  .menu,
+  .mail {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .bar .cta {
     display: none;
   }
 }

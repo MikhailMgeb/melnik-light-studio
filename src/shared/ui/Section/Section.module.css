@@ -1,0 +1,8 @@
+.block {
+  padding: clamp(72px, 10vw, 128px) 0;
+}
+
+.tone {
+  background: var(--bg-2);
+  transition: background-color 0.5s;
+}

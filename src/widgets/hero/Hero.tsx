@@ -1,37 +1,59 @@
 import { Container } from '@/shared/ui/Container'
 import { Button } from '@/shared/ui/Button'
 import { PhotoPlaceholder } from '@/shared/ui/PhotoPlaceholder'
+import { primaryCtaHref } from '@/shared/config/navigation'
+import { usePointerLight } from './lib/usePointerLight'
 import styles from './Hero.module.css'
 
+interface Fact {
+  title: string
+  description: string
+}
+
+const facts: Fact[] = [
+  { title: 'Проект + поставка', description: 'одна ответственность за результат' },
+  { title: 'Для дизайнеров и частных клиентов', description: 'работаем с бюро и напрямую' },
+  { title: 'Москва', description: 'встречи в студии и онлайн' },
+]
+
 export function Hero() {
+  const { heroRef, ringRef } = usePointerLight()
+
   return (
-    <Container className={styles.hero}>
-      <div className={styles.top}>
-        <h1>Проектируем свет и тень для интерьеров — от расчёта до настройки на объекте</h1>
-        <div>
-          <p className="lead">
-            MELNIK° — московская студия светодизайна. Работаем в паре с дизайнерами и архитекторами:
-            считаем, подбираем, поставляем и настраиваем свет так, чтобы интерьер выглядел как в
-            проекте.
-          </p>
-          <div className={styles.actions}>
-            <Button href="#contact">Обсудить проект</Button>
-            <Button href="#works" variant="ghost">
-              Смотреть проекты
-            </Button>
+    <section ref={heroRef} className={styles.hero}>
+      <Container>
+        <div className={styles.grid}>
+          <div>
+            <h1>Проект освещения для квартиры и дома — с расчётом и поставкой</h1>
+            <p className={styles.sub}>
+              Продумаем свет под ваш интерьер, проверим его расчётом, подберём и привезём светильники. Одна
+              команда от первой встречи до монтажа.
+            </p>
+            <div className={styles.actions}>
+              <Button href={primaryCtaHref}>Рассчитать стоимость проекта</Button>
+              <Button href="#projects" variant="ghost">
+                Посмотреть проекты
+              </Button>
+            </div>
           </div>
+          <figure className={styles.founder}>
+            <div ref={ringRef} className={styles.ring} aria-hidden="true" />
+            <PhotoPlaceholder label="Фото основателя" ariaLabel="Илья Мельник" className={styles.photo} />
+            <figcaption className={styles.cap}>
+              <b>Илья Мельник</b>
+              <span>основатель MELNIK°</span>
+            </figcaption>
+          </figure>
         </div>
-      </div>
-      <PhotoPlaceholder
-        label="Фото объекта, горизонтальное, от 2400 px по ширине"
-        focusX="62%"
-        focusX2="18%"
-        className={styles.photo}
-      />
-      <div className={styles.caption}>
-        <span>Название объекта</span>
-        <span>Тип помещения, площадь</span>
-      </div>
-    </Container>
+        <div className={styles.facts}>
+          {facts.map((fact) => (
+            <div key={fact.title}>
+              <b>{fact.title}</b>
+              {fact.description}
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
   )
 }

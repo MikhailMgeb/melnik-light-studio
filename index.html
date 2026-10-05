@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>MELNIK° — свет и тень</title>
+    <title>MELNIK° — проект освещения для квартиры и дома, Москва</title>
     <meta
       name="description"
-      content="Московская студия светодизайна: светотехнические расчёты, подбор и поставка оборудования, электрофурнитура и настройка света на объекте. Для дизайнеров, архитекторов и частных клиентов."
+      content="MELNIK° — студия света: проект освещения, светотехнический расчёт, подбор и поставка светильников. Москва."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Geologica:wght@200;300;400;500&family=Montserrat:wght@400&display=swap&subset=cyrillic"
+      href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Golos+Text:wght@400;500;600&display=swap&subset=cyrillic"
       rel="stylesheet"
     />
+    <!-- Применяем сохранённую тему до первого рендера, чтобы страница не мигала (ключ — в features/theme-toggle) -->
+    <script>
+      try {
+        var theme = localStorage.getItem('melnik-theme')
+        if (theme === 'light' || theme === 'dark') document.documentElement.setAttribute('data-theme', theme)
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,25 +1,19 @@
-import type { Project } from './Project'
+import type { ProjectCategory } from './ProjectCategory'
 
-export const projects: Project[] = [
+export const projectCategories: ProjectCategory[] = [
   {
-    title: 'Название объекта',
-    meta: 'Квартира, 000 м², дизайнер: имя или бюро',
-    focusX: '30%',
-    focusX2: '78%',
-    size: 'large',
+    id: 'flat',
+    label: 'Квартиры',
+    photos: ['Квартира — главное фото', 'Кухня-гостиная', 'Спальня', 'Ванная', 'Прихожая', 'Детали'],
   },
   {
-    title: 'Название объекта',
-    meta: 'Частный дом, 000 м², дизайнер: имя или бюро',
-    focusX: '55%',
-    focusX2: '15%',
-    size: 'normal',
+    id: 'house',
+    label: 'Частные дома',
+    photos: ['Дом — главное фото', 'Гостиная', 'Лестница', 'Фасад', 'Терраса', 'Детали'],
   },
   {
-    title: 'Название объекта',
-    meta: 'Ресторан или шоурум, 000 м², архитектор: имя или бюро',
-    focusX: '25%',
-    focusX2: '80%',
-    size: 'normal',
+    id: 'public',
+    label: 'Общественные',
+    photos: ['Объект — главное фото', 'Зал', 'Витрина', 'Ресепшен', 'Коридор', 'Детали'],
   },
 ]
