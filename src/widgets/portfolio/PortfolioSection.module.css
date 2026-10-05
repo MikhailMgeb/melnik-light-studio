@@ -1,5 +1,65 @@
-.works {
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  font: 500 14px/1 var(--text);
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tabs button[aria-selected='true'] {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.gallery {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: clamp(16px, 2vw, 28px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 40px;
+}
+
+/* display:grid перебивает браузерный стиль атрибута hidden */
+.gallery[hidden] {
+  display: none;
+}
+
+.photo {
+  grid-column: span 4;
+  min-height: 220px;
+}
+
+.photo:nth-child(1) {
+  grid-column: span 7;
+  grid-row: span 2;
+  min-height: 460px;
+}
+
+.photo:nth-child(2),
+.photo:nth-child(3) {
+  grid-column: span 5;
+}
+
+@media (max-width: 760px) {
+  .photo,
+  .photo:nth-child(n) {
+    grid-column: span 12;
+    grid-row: auto;
+    min-height: 240px;
+  }
 }

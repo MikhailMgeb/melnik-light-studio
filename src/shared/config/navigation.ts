@@ -4,10 +4,11 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { href: '#services', label: 'Услуги' },
+  { href: '#projects', label: 'Проекты' },
+  { href: '#steps', label: 'Этапы' },
+  { href: '#audit', label: 'Проверка сметы' },
   { href: '#designers', label: 'Дизайнерам' },
-  { href: '#works', label: 'Проекты' },
-  { href: '#prices', label: 'Цены' },
+  { href: '#faq', label: 'Вопросы' },
 ]
 
-export const primaryCtaHref = '#contact'
+export const primaryCtaHref = '#request'

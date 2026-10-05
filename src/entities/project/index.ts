@@ -1,3 +1,2 @@
-export type { Project } from './Project'
-export { projects } from './data'
-export { ProjectCard } from './ProjectCard'
+export type { ProjectCategory } from './ProjectCategory'
+export { projectCategories } from './data'

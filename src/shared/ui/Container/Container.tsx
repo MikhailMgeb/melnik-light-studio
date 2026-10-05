@@ -1,18 +1,12 @@
-import type { ElementType, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import styles from './Container.module.css'
 
 interface ContainerProps {
-  as?: ElementType
   className?: string
-  id?: string
   children: ReactNode
 }
 
-export function Container({ as: Tag = 'div', className, id, children }: ContainerProps) {
+export function Container({ className, children }: ContainerProps) {
   const classes = className ? `${styles.wrap} ${className}` : styles.wrap
-  return (
-    <Tag className={classes} id={id}>
-      {children}
-    </Tag>
-  )
+  return <div className={classes}>{children}</div>
 }

@@ -1,5 +1,7 @@
-import { Container } from '@/shared/ui/Container'
+import { Section } from '@/shared/ui/Section'
 import { SectionHeading } from '@/shared/ui/SectionHeading'
+import { Button } from '@/shared/ui/Button'
+import { buildMailto } from '@/shared/lib/mailto'
 import styles from './DesignersSection.module.css'
 
 interface DesignerPromise {
@@ -9,44 +11,41 @@ interface DesignerPromise {
 
 const promises: DesignerPromise[] = [
   {
-    title: 'Не конкурируем за дизайн',
-    description: 'Не предлагаем заказчику свой визуал в обход вас. Все решения по образу остаются за дизайнером.',
+    title: 'Расчёт и чертежи',
+    description: 'Светотехнический расчёт и планы расстановки по вашему проекту.',
   },
   {
-    title: 'Документы под вашим именем',
-    description: 'Расчёт, схемы и спецификацию можем оформить в вашей подаче, чтобы проект выглядел единым.',
+    title: 'Спецификация под бюджет',
+    description: 'Несколько вариантов оборудования, чтобы вам было что предложить заказчику.',
   },
   {
-    title: 'Выезд и мокап на объекте',
-    description:
-      'Привозим светильники и показываем свет в реальном пространстве, чтобы заказчик принимал решение не по рендеру.',
+    title: 'Партнёрские условия',
+    description: 'Специальные условия на поставку — обсуждаем индивидуально.',
   },
 ]
 
+const partnershipHref = buildMailto({ subject: 'Сотрудничество с дизайнером' })
+
 export function DesignersSection() {
   return (
-    <section id="designers">
-      <Container>
+    <Section id="designers" tone className={styles.designers}>
+      <div>
         <SectionHeading
-          title="Если вы делаете интерьер — мы делаем свет"
-          description="Подключаемся к проекту как внешний отдел освещения. Работаем по вашим чертежам, в вашем графике и с вашей подачей."
+          title="Дизайнерам и архитекторам"
+          description="Берём на себя техническую часть света. Концепция и авторство остаются за вами, а мы отвечаем за расчёт, оборудование и сроки."
         />
-        <div className={styles.promises}>
-          {promises.map((promise) => (
-            <div key={promise.title}>
-              <h3>{promise.title}</h3>
-              <p>{promise.description}</p>
-            </div>
-          ))}
+        <div className={styles.actions}>
+          <Button href={partnershipHref}>Обсудить сотрудничество</Button>
         </div>
-        <div className={styles.also}>
-          <h3>Частным клиентам</h3>
-          <p>
-            Если в проекте нет раздела по освещению или дизайнера нет вовсе, сделаем светотехническую
-            часть с нуля и доведём её до монтажа и настройки.
-          </p>
-        </div>
-      </Container>
-    </section>
+      </div>
+      <dl className={styles.promises}>
+        {promises.map((promise) => (
+          <div key={promise.title}>
+            <dt>{promise.title}</dt>
+            <dd>{promise.description}</dd>
+          </div>
+        ))}
+      </dl>
+    </Section>
   )
 }
